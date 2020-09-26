@@ -1,4 +1,4 @@
-yout')
+@extends('layout')
 
 @section('header')
 <div class="page-header">
