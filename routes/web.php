@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect('tasks');
-});
+})->middleware('auth');
 
 Route::resource('tasks', 'TaskController');
 
