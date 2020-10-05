@@ -6,7 +6,7 @@
 @if ($level === 'error')
 # @lang('Whoops!')
 @else
-# @lang('Hello!')
+
 <b>こんにちは</b>
 @endif
 @endif
@@ -52,13 +52,13 @@
 @isset($actionText)
 @slot('subcopy')
 @lang(
-    ":actionText ボタンが利用できない場合は、以下のURLをコピー＆ペーストしてブラウザから直接アクセスしてください\n".
-    '[:actionURL](:actionURL)',
-    [
-        'actionText' => $actionText,
-　　　　'actionURL' => $actionUrl,
-    ]
-) <span class="break-all">[{{ $displayableActionUrl }}]({{ $actionUrl }})</span>
+	":actionText ボタンが利用できない場合は、以下のURLをコピー＆ペーストしてブラウザから直接アクセスしてください。<br />\n" .	
+    '[:actionURL](:actionURL)',	
+    [	
+        'actionText' => $actionText,	
+        'actionURL' => $actionUrl,	
+    ]	
+)
 @endslot
 @endisset
 @endcomponent
