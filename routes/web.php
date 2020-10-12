@@ -13,19 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return redirect('tasks');
-})->middleware('auth');
-
-Auth::routes(['verify' => true]);
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::middleware('verified')->group(function () {
-    // 本登録のユーザーが見られる画面
-    Route::get('verified',  function() {
-        
-    });    
 });
 
 Route::resource('tasks', 'TaskController');
+
+Auth::routes(['verify' => true]);
+
+Route::middleware('verified')->group(function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+});
