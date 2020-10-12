@@ -14,14 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
 Route::get('/', function () {
     return redirect('tasks');
-});
+})->middleware('auth');
 
-Route::resource('tasks', 'TaskController');
+Route::middleware('verified')->group(function() {
+    // 本登録ユーザーだけ表示できるページ
+        Route::get('/home', 'HomeController@index')->name('home');
+});
 
 Auth::routes(['verify' => true]);
 
-Route::middleware('verified')->group(function() {
-    Route::get('/home', 'HomeController@index')->name('home');
-});
+Route::resource('tasks', 'TaskController');
