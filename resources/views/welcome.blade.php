@@ -12,8 +12,8 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #c0c0c0;
+                color: #000;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -45,7 +45,8 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 60px;
+                font-family: "メイリオ" ;
             }
 
             .links > a {
@@ -81,7 +82,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel lala
+                    What's do you do?
                 </div>
 
                 <div class="links">

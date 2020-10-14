@@ -13,11 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
-
 Route::get('/', function () {
     return redirect('tasks');
 })->middleware('auth')->middleware('verified');
+
+Route::get('/', function () {
+    return view('welcome');
+})->middleware('guest');
 
 Route::get('/tasks', function () {
     return redirect('tasks');
@@ -29,7 +31,6 @@ Route::resource('tasks', 'TaskController');
 
 Route::get('/logout', function () {
     Auth::logout();
-    return redirect('/');
 })->middleware('auth')->middleware('verified');
 
 Auth::routes(['verify' => true]);
